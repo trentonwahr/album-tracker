@@ -4,6 +4,26 @@
 </head>
 <body>
   <nav>
+    <a 
+      href="/" class=<%= title === 'Feed' ? 'active' : '' %>
+    >
+      FEED
+    </a>
+    <a 
+      href="/albums/new" class=<%= title === 'Add Album' ? 'active' : '' %>
+    >
+      ADD ALBUM
+    </a>
+    <a 
+      href="/albums" class=<%= title === 'All Albums' ? 'active' : '' %>
+    >
+      ALL ALBUMS
+    </a>
+    <a 
+      href="/profiles" class=<%= title === 'Profile' ? 'active' : '' %>
+    >
+      PROFILE
+    </a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
@@ -20,7 +40,7 @@
         class="g_id_signin right"
         data-type="standard"
         data-size="large"
-        data-theme="outline"
+        data-theme="filled_black"
         data-text="sign_in_with"
         data-shape="rectangular"
         data-logo_alignment="left"
