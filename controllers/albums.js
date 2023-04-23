@@ -70,6 +70,17 @@ function update(req, res) {
   })
 }
 
+function deleteAlbum(req, res) {
+  Album.findByIdAndDelete(req.params.albumId)
+  .then(album => {
+    res.redirect('/albums')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
+  })
+}
+
 export {
   index,
   newAlbum as new,
@@ -77,4 +88,5 @@ export {
   show,
   edit,
   update,
+  deleteAlbum as delete,
 }

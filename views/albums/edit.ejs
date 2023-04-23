@@ -4,7 +4,7 @@
 <main>
   <h1><%= title %></h1>
   <form 
-    id="new-form" 
+    id="edit-form" 
     action="/albums/<%= album._id %>?_method=PUT" 
     method="POST"
     >
@@ -17,6 +17,13 @@
     <label for="genre-input">Genre:</label>
     <input type="text" name="genre" id="genre-input" value="<%= album.genre %>">
     <button type="submit">Save Album</button>
+  </form>
+  <form 
+    id="delete-form"
+    action="/albums/<%= album._id %>?_method=DELETE"
+    method="POST"
+    >
+    <button type="submit">Delete Album</button>
   </form>
 </main>
 

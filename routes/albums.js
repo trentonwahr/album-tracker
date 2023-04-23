@@ -10,6 +10,7 @@ router.get('/:albumId', albumsCtrl.show)
 router.get('/:albumId/edit', albumsCtrl.edit)
 router.post('/', albumsCtrl.create)
 router.put('/:albumId', albumsCtrl.update)
+router.delete('/:albumId', albumsCtrl.delete)
 
 export {
   router
