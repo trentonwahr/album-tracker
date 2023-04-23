@@ -19,11 +19,15 @@
     >
       ALL ALBUMS
     </a>
-    <a 
-      href="/profiles/<%= profile._id %>" class=<%= title === 'Profile' ? 'active' : '' %>
-    >
+
+    <% if (user) { %>
+      <a 
+      href="/profiles/<%= user.profile._id %>" class=<%= title === 'Profile' ? 'active' : '' %>
+      >
       PROFILE
-    </a>
+      </a>
+    <% } %>
+
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
