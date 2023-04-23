@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form 
+    id="new-form" 
+    action="/albums/<%= album._id %>?_method=PUT" 
+    method="POST"
+    >
+    <label for="name-input">Name:</label>
+    <input type="text" name="name" id="name-input" value="<%= album.name %>">
+    <label for="artist-input">Artist:</label>
+    <input type="text" name="artist" id="artist-input" value="<%= album.artist %>">
+    <label for="release-year-input">Release Year:</label>
+    <input type="text" name="releaseYear" id="release-year-input" value="<%= album.releaseYear %>">
+    <label for="genre-input">Genre:</label>
+    <input type="text" name="genre" id="genre-input" value="<%= album.genre %>">
+    <button type="submit">Save Album</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

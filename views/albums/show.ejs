@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <h2>
+    <a href="/albums/<%= album._id %>/edit">
+      <button>Edit Album</button>
+    </a>
+  </h2>
+  <section></section>
+    <div>Name:</div>
+    <div><%= album.name %></div>
+    <div>Artist:</div>
+    <div><%= album.artist %></div>
+    <div>Release Year:</div>
+    <div><%= album.releaseYear %></div>
+    <div>Genre:</div>
+    <div><%= album.genre %></div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

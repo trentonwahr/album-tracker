@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Albums</h1>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Artist</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% albums.forEach((album) => { %>
+      <tr>
+        <td><%= album.name %></td>
+        <td><%= album.artist %></td>
+        <td><a href="/albums/<%= album._id %>">Details</a></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+
+<%- include('../partials/footer') %>
