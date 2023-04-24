@@ -36,7 +36,6 @@ function create(req, res) {
 function show(req, res) {
   Album.findById(req.params.albumId)
   .populate("reviews")
-  // .populate("owner")
   .then(album => {
     res.render('albums/show', {
       album,
@@ -107,6 +106,25 @@ function deleteAlbum(req, res) {
   })
 }
 
+function addReview(req, res) {
+  Album.findById(req.params.albumId)
+  .then(album => {
+    album.reviews.push(req.body.reviewId)
+    album.save()
+    .then(() => {
+      res.redirect(`albums/${album._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/albums')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
+  })
+}
+
 export {
   index,
   newAlbum as new,
@@ -115,4 +133,5 @@ export {
   edit,
   update,
   deleteAlbum as delete,
+  addReview,
 }

@@ -31,12 +31,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+      <%# reviews.forEach((review) => { %>
+        <tr>
+          <td><%# review.rating %></td>
+          <td><%# review.content %></td>
+          <td><%# review.favoriteSong %></td>
+          <td>X</td>
+        </tr>
+        <%# }) %>
     </tbody>
   </table>
   <% if (user) { %>
@@ -52,7 +54,7 @@
       <label for="review-input">Review:</label>
       <input type="text" name="content" id="review-input">
       <label for="favorite-song-input">Favorite Song:</label>
-      <input type="text" name="genre" id="genre-input">
+      <input type="text" name="favoriteSong" id="genre-input">
       <button type="submit">Add Review</button>
     </form>
   <% } %>
