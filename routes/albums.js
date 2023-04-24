@@ -5,12 +5,12 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', albumsCtrl.index)
-router.get('/new', albumsCtrl.new)
+router.get('/new', isLoggedIn, albumsCtrl.new)
 router.get('/:albumId', albumsCtrl.show)
-router.get('/:albumId/edit', albumsCtrl.edit)
-router.post('/', albumsCtrl.create)
-router.put('/:albumId', albumsCtrl.update)
-router.delete('/:albumId', albumsCtrl.delete)
+router.get('/:albumId/edit', isLoggedIn, albumsCtrl.edit)
+router.post('/', isLoggedIn, albumsCtrl.create)
+router.put('/:albumId', isLoggedIn, albumsCtrl.update)
+router.delete('/:albumId', isLoggedIn, albumsCtrl.delete)
 
 export {
   router
