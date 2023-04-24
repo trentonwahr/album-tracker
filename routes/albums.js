@@ -9,7 +9,7 @@ router.get('/new', isLoggedIn, albumsCtrl.new)
 router.get('/:albumId', albumsCtrl.show)
 router.get('/:albumId/edit', isLoggedIn, albumsCtrl.edit)
 router.post('/', isLoggedIn, albumsCtrl.create)
-router.post('/:albumId/reviews', isLoggedIn, albumsCtrl.addReview)
+// router.post('/:albumId/reviews', isLoggedIn, albumsCtrl.addReview)
 router.put('/:albumId', isLoggedIn, albumsCtrl.update)
 router.delete('/:albumId', isLoggedIn, albumsCtrl.delete)
 

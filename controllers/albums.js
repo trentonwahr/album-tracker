@@ -1,5 +1,6 @@
 import { Album } from "../models/album.js"
 import { AlbumReview } from "../models/review.js"
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Album.find({})
@@ -35,7 +36,7 @@ function create(req, res) {
 
 function show(req, res) {
   Album.findById(req.params.albumId)
-  .populate("reviews")
+  .populate('reviews')
   .then(album => {
     res.render('albums/show', {
       album,
@@ -106,24 +107,24 @@ function deleteAlbum(req, res) {
   })
 }
 
-function addReview(req, res) {
-  Album.findById(req.params.albumId)
-  .then(album => {
-    album.reviews.push(req.body.reviewId)
-    album.save()
-    .then(() => {
-      res.redirect(`albums/${album._id}`)
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/albums')
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/albums')
-  })
-}
+// function addReview(req, res) {
+//   Album.findById(req.params.albumId)
+//   .then(album => {
+//     album.reviews.push(req.body.reviewId)
+//     album.save()
+//     .then(() => {
+//       res.redirect(`albums/${album._id}`)
+//     })
+//     .catch(err => {
+//       console.log(err)
+//       res.redirect('/albums')
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/albums')
+//   })
+// }
 
 export {
   index,
@@ -133,5 +134,5 @@ export {
   edit,
   update,
   deleteAlbum as delete,
-  addReview,
+  // addReview,
 }

@@ -31,14 +31,14 @@
       </tr>
     </thead>
     <tbody>
-      <%# reviews.forEach((review) => { %>
+      <% album.reviews.forEach(review => { %>
         <tr>
-          <td><%# review.rating %></td>
-          <td><%# review.content %></td>
-          <td><%# review.favoriteSong %></td>
+          <td><%= review.rating %></td>
+          <td><%= review.content %></td>
+          <td><%= review.favoriteSong %></td>
           <td>X</td>
         </tr>
-        <%# }) %>
+        <% }) %>
     </tbody>
   </table>
   <% if (user) { %>
