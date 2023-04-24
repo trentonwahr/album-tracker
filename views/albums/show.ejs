@@ -3,11 +3,13 @@
 
 <main>
   <h1><%= title %></h1>
-  <h2>
-    <a href="/albums/<%= album._id %>/edit">
-      <button>Edit Album</button>
-    </a>
-  </h2>
+  <% if ((album.owner.equals(user?.profile._id))) { %>
+    <h2>
+      <a href="/albums/<%= album._id %>/edit">
+        <button>Edit Album</button>
+      </a>
+    </h2>
+  <% } %>
   <section></section>
     <div>Name:</div>
     <div><%= album.name %></div>
