@@ -20,6 +20,42 @@
     <div>Genre:</div>
     <div><%= album.genre %></div>
   </section>
+  <h2>Album Reviews</h2>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Rating</th>
+        <th>Review</th>
+        <th>Favorite Song</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <% if (user) { %>
+    <form id="reviews-form" action="/reviews" method="POST">
+      <label for="rating-select">Rating:</label>
+      <select name="rating" id="rating-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+      <label for="review-input">Review:</label>
+      <input type="text" name="content" id="review-input">
+      <label for="favorite-song-input">Favorite Song:</label>
+      <input type="text" name="genre" id="genre-input">
+      <button type="submit">Add Review</button>
+    </form>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

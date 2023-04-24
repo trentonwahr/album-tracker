@@ -1,4 +1,5 @@
 import { Album } from "../models/album.js"
+import { AlbumReview } from "../models/review.js"
 
 function index(req, res) {
   Album.find({})
@@ -34,7 +35,8 @@ function create(req, res) {
 
 function show(req, res) {
   Album.findById(req.params.albumId)
-  .populate("owner")
+  .populate("reviews")
+  // .populate("owner")
   .then(album => {
     res.render('albums/show', {
       album,

@@ -1,4 +1,6 @@
 import { Profile } from '../models/profile.js'
+import { Album } from "../models/album.js"
+import { AlbumReview } from "../models/review.js"
 
 
 function show(req, res) {
