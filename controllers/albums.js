@@ -62,20 +62,42 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true})
+  Album.findById(req.params.albumId)
   .then(album => {
-    res.redirect(`/albums/${album._id}`)
+    if (album.owner.equals(req.user.profile._id)) {
+      album.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/albums/${album._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/')
+      })
+    } else {
+      throw new Error('Not Authorized')
+    }
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/albums')
+    res.redirect('/')
   })
 }
 
 function deleteAlbum(req, res) {
-  Album.findByIdAndDelete(req.params.albumId)
+  Album.findById(req.params.albumId)
   .then(album => {
-    res.redirect('/albums')
+    if (album.owner.equals(req.user.profile._id)) {
+      album.deleteOne()
+      .then(() => {
+        res.redirect('/albums')
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/')
+      })
+    } else {
+      throw new Error('Not Authorized')
+    }
   })
   .catch(err => {
     console.log(err)
