@@ -50,7 +50,7 @@ function update(req, res) {
     if (review.author.equals(req.user.profile._id)) {
       review.updateOne(req.body)
       .then(() => {
-        res.redirect(`/albums`)
+        res.redirect(`/albums/`)
       })
       .catch(err => {
         console.log(err)
