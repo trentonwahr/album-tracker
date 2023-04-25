@@ -11,8 +11,7 @@ function show(req, res) {
     res.render('profiles/show', {
       title: 'My Profile',
       profile,
-      albums,
-      isSelf
+      isSelf,
     })
   })
   .catch((err) => {

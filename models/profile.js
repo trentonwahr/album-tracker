@@ -6,7 +6,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   albumReviews: [{type: Schema.Types.ObjectId, ref: 'AlbumReview'}],
-  albums: [{type: Schema.Types.ObjectId, ref: 'Albums'}],
+  albums: [{type: Schema.Types.ObjectId, ref: 'Album'}],
 }, {
   timestamps: true
 })

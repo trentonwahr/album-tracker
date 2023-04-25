@@ -13,14 +13,12 @@
     </thead>
     <tbody>
       <thead>
-        <% albums.forEach(album => { %>
-          <% if ((album.owner.equals(user?.profile._id))) { %>
-            <tr>
-              <td><%= album.name %></td>
-              <td><%= album.artist %></td>
-              <td><a href="/albums/<%= album._id %>">Details</a></td>
-            </tr>
-          <% } %>
+        <% profile.albums.forEach(album => { %>
+          <tr>
+            <td><%= album.name %></td>
+            <td><%= album.artist %></td>
+            <td><a href="/albums/<%= album._id %>">Details</a></td>
+          </tr>
         <% }) %>
       </thead>
     </tbody>
