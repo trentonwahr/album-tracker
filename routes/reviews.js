@@ -4,7 +4,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-router.post('/', reviewsCtrl.create)
+router.delete('/:reviewId', isLoggedIn, reviewsCtrl.delete)
 
 export {
   router

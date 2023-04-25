@@ -36,13 +36,17 @@
           <td><%= review.rating %></td>
           <td><%= review.content %></td>
           <td><%= review.favoriteSong %></td>
-          <td>X</td>
+          <td>
+            <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+          </td>
         </tr>
         <% }) %>
     </tbody>
   </table>
   <% if (user) { %>
-    <form id="reviews-form" action="/reviews" method="POST">
+    <form id="reviews-form" action="/albums/<%= album._id %>/reviews" method="POST">
       <label for="rating-select">Rating:</label>
       <select name="rating" id="rating-select">
         <option value="1">1</option>
