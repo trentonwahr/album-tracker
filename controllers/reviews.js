@@ -45,7 +45,25 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  
+  AlbumReview.findById(req.params.reviewId)
+  .then(review => {
+    if (review.author.equals(req.user.profile._id)) {
+      review.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/albums`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/')
+      })
+    } else {
+      throw new Error('Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 function deleteReview(req, res) {
