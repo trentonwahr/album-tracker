@@ -44,6 +44,10 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  
+}
+
 function deleteReview(req, res) {
   AlbumReview.findById(req.params.reviewId)
   .then(review => {
@@ -69,5 +73,6 @@ function deleteReview(req, res) {
 export {
   createReview,
   edit,
+  update,
   deleteReview as delete,
 }
