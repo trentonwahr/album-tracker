@@ -69,7 +69,7 @@ function update(req, res) {
 function deleteReview(req, res) {
   AlbumReview.findById(req.params.reviewId)
   .then(review => {
-    if (review.owner.equals(req.user.profile._id)) {
+    if (review.author.equals(req.user.profile._id)) {
       review.deleteOne()
       .then(() => {
         res.redirect('/albums')
