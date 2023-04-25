@@ -22,6 +22,13 @@
     <input type="text" name="favoriteSong" id="genre-input" value="<%= review.favoriteSong %>">
     <button type="submit">Save Review</button>
   </form>
+  <form 
+    id="delete-review-form"
+    action="/reviews/<%= review._id %>?_method=DELETE"
+    method="POST"
+    >
+    <button type="submit">Delete Review</button>
+  </form>
 </main>
 
 <%- include('../partials/footer') %>
