@@ -26,13 +26,39 @@ function create(req, res) {
   req.body.owner = req.user.profile._id
   Album.create(req.body)
   .then(album => {
-    res.redirect(`/albums/${album._id}`)
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      profile.albums.push(album._id)
+      profile.save()
+      .then(() => {
+        res.redirect(`/albums/${album._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/albums/new')
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/albums/new')
+    })
   })
   .catch(err => {
     console.log(err)
     res.redirect('/albums/new')
   })
 }
+// function create(req, res) {
+//   req.body.owner = req.user.profile._id
+//   Album.create(req.body)
+//   .then(album => {
+//     res.redirect(`/albums/${album._id}`)
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/albums/new')
+//   })
+// }
 
 function show(req, res) {
   Album.findById(req.params.albumId)
