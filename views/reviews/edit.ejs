@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form 
+    id="edit-reviews-form" 
+    action="/reviews/<%= review._id %>?_method=PUT" method="POST"
+    >
+    <label for="rating-select">Rating:</label>
+    <select name="rating" id="rating-select">
+      <option value="<%= review.rating %>"></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <label for="review-input">Review:</label>
+    <input type="text" name="content" id="review-input" value="<%= review.content %>">
+    <label for="favorite-song-input">Favorite Song:</label>
+    <input type="text" name="favoriteSong" id="genre-input" value="<%= review.favoriteSong %>">
+    <button type="submit">Save Review</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

@@ -30,11 +30,44 @@ function createReview(req, res) {
   })
 }
 
-function deleteReview(rew, res) {
-  
+function edit(req, res) {
+  AlbumReview.findById(req.params.reviewId)
+  .then(review => {
+    res.render('reviews/edit', {
+      review,
+      title: 'Edit Review',
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
+  })
+}
+
+function deleteReview(req, res) {
+  AlbumReview.findById(req.params.reviewId)
+  .then(review => {
+    if (review.owner.equals(req.user.profile._id)) {
+      review.deleteOne()
+      .then(() => {
+        res.redirect('/albums')
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/')
+      })
+    } else {
+      throw new Error('Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums')
+  })
 }
 
 export {
   createReview,
+  edit,
   deleteReview as delete,
 }

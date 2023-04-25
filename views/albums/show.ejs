@@ -27,7 +27,9 @@
         <th>Rating</th>
         <th>Review</th>
         <th>Favorite Song</th>
-        <th></th>
+        <% if (user) { %>
+          <th></th>
+        <% } %>
       </tr>
     </thead>
     <tbody>
@@ -36,11 +38,13 @@
           <td><%= review.rating %></td>
           <td><%= review.content %></td>
           <td><%= review.favoriteSong %></td>
-          <td>
-            <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
-            </form>
-          </td>
+          <% if (user) { %>
+            <td>
+              <form action="/reviews/<%= review._id %>/edit" method="GET">
+                <button type="submit">Edit Review</button>
+              </form>
+            </td>
+          <% } %>
         </tr>
         <% }) %>
     </tbody>
