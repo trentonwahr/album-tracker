@@ -15,6 +15,7 @@ router.delete('/:albumId', isLoggedIn, albumsCtrl.delete)
 
 router.post('/:albumId/reviews', isLoggedIn, reviewsCtrl.createReview)
 
+
 export {
   router
 }

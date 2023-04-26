@@ -21,12 +21,12 @@ function createReview(req, res) {
     })
     .catch(err => {
       console.log(err)
-      res.redirect(`/albums/${album._id}`)
+      res.redirect(`/albums`)
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`/albums/${album._id}`)
+    res.redirect(`/albums`)
   })
 }
 
@@ -50,11 +50,11 @@ function update(req, res) {
     if (review.author.equals(req.user.profile._id)) {
       review.updateOne(req.body)
       .then(() => {
-        res.redirect(`/albums/`)
+        res.redirect(`/albums`)
       })
       .catch(err => {
         console.log(err)
-        res.redirect('/')
+        res.redirect('/albums')
       })
     } else {
       throw new Error('Not Authorized')
@@ -62,7 +62,7 @@ function update(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/')
+    res.redirect('/albums')
   })
 }
 
@@ -76,7 +76,7 @@ function deleteReview(req, res) {
       })
       .catch(err => {
         console.log(err)
-        res.redirect('/')
+        res.redirect('/albums')
       })
     } else {
       throw new Error('Not Authorized')
