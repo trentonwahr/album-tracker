@@ -48,17 +48,6 @@ function create(req, res) {
     res.redirect('/albums/new')
   })
 }
-// function create(req, res) {
-//   req.body.owner = req.user.profile._id
-//   Album.create(req.body)
-//   .then(album => {
-//     res.redirect(`/albums/${album._id}`)
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/albums/new')
-//   })
-// }
 
 function show(req, res) {
   Album.findById(req.params.albumId)
@@ -133,25 +122,6 @@ function deleteAlbum(req, res) {
   })
 }
 
-// function addReview(req, res) {
-//   Album.findById(req.params.albumId)
-//   .then(album => {
-//     album.reviews.push(req.body.reviewId)
-//     album.save()
-//     .then(() => {
-//       res.redirect(`albums/${album._id}`)
-//     })
-//     .catch(err => {
-//       console.log(err)
-//       res.redirect('/albums')
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/albums')
-//   })
-// }
-
 export {
   index,
   newAlbum as new,
@@ -160,5 +130,4 @@ export {
   edit,
   update,
   deleteAlbum as delete,
-  // addReview,
 }

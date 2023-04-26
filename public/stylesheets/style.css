@@ -9,22 +9,9 @@ html {
   box-sizing: border-box;
 }
 
-#d79823
-#efe1b9
-#f03a1c
-#4155a1
-#c5cbe3
-
-#29574D
-#FEAEB0
-#05241d
-
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
+*,
+*::before,
 *::after {
-  /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default but can be overridden as needed */
   box-sizing: inherit;
 }
 
@@ -89,7 +76,7 @@ nav > a:visited {
 }
 
 nav > a:hover {
-  color: #f03a1c;
+  color: #4155a1;
   background-color: #c5cbe3;
 }
 
