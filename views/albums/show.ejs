@@ -7,7 +7,7 @@
   <% if ((album.owner.equals(user?.profile._id))) { %>
     <h2>
       <a href="/albums/<%= album._id %>/edit">
-        <button>Edit Album</button>
+        <button class="edit-button">Edit Album</button>
       </a>
     </h2>
   <% } %>

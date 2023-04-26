@@ -17,3 +17,9 @@ form > button {
   margin-left: auto;
   font-size: 22px;
 }
+
+button {
+  background-color: rgb(254, 245, 235);
+  padding: 5px;
+  border-radius: 5px;
+}
