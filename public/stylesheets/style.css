@@ -72,3 +72,9 @@ nav > a:hover {
 nav > a.active {
   color: #FEAEB0;
 }
+
+button {
+  background-color: rgb(254, 245, 235);
+  padding: 5px;
+  border-radius: 5px;
+}
