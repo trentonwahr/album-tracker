@@ -4,13 +4,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <% if ((album.owner.equals(user?.profile._id))) { %>
-    <h2>
-      <a href="/albums/<%= album._id %>/edit">
-        <button class="edit-button">Edit Album</button>
-      </a>
-    </h2>
-  <% } %>
+  
   <section>
     <div>Name:</div>
     <div><%= album.name %></div>
@@ -21,6 +15,13 @@
     <div>Genre:</div>
     <div><%= album.genre %></div>
   </section>
+  <% if ((album.owner.equals(user?.profile._id))) { %>
+    <h2>
+      <a href="/albums/<%= album._id %>/edit">
+        <button class="edit-button">Edit Album</button>
+      </a>
+    </h2>
+  <% } %>
   <h2>Album Reviews</h2>
   <table id="list">
     <thead>
