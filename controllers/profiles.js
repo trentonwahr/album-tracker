@@ -9,7 +9,7 @@ function show(req, res) {
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render('profiles/show', {
-      title: 'My Profile',
+      title: 'Profile',
       profile,
       isSelf,
     })
