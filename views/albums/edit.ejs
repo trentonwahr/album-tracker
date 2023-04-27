@@ -9,13 +9,13 @@
     method="POST"
     >
     <label for="name-input">Name:</label>
-    <input type="text" name="name" id="name-input" value="<%= album.name %>">
+    <input type="text" name="name" id="name-input" value="<%= album.name %>" autocomplete="off">
     <label for="artist-input">Artist:</label>
-    <input type="text" name="artist" id="artist-input" value="<%= album.artist %>">
+    <input type="text" name="artist" id="artist-input" value="<%= album.artist %>" autocomplete="off">
     <label for="release-year-input">Release Year:</label>
-    <input type="text" name="releaseYear" id="release-year-input" value="<%= album.releaseYear %>">
+    <input type="text" name="releaseYear" id="release-year-input" value="<%= album.releaseYear %>" autocomplete="off">
     <label for="genre-input">Genre:</label>
-    <input type="text" name="genre" id="genre-input" value="<%= album.genre %>">
+    <input type="text" name="genre" id="genre-input" value="<%= album.genre %>" autocomplete="off">
     <button type="submit">Save Album</button>
   </form>
   <form 

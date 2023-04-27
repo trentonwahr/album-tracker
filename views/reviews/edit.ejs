@@ -17,9 +17,9 @@
       <option value="5">5</option>
     </select>
     <label for="review-input">Review:</label>
-    <input type="text" name="content" id="review-input" value="<%= review.content %>">
+    <input type="text" name="content" id="review-input" value="<%= review.content %>" autocomplete="off">
     <label for="favorite-song-input">Favorite Song:</label>
-    <input type="text" name="favoriteSong" id="genre-input" value="<%= review.favoriteSong %>">
+    <input type="text" name="favoriteSong" id="favorite-song-input" value="<%= review.favoriteSong %>" autocomplete="off">
     <button type="submit">Save Review</button>
   </form>
   <form 
