@@ -95,6 +95,10 @@ button {
   font-family: "helvetica neue";
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 #logout {
   color: #f03a1c;
 }
