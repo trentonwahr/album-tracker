@@ -1,5 +1,7 @@
 # Long Plays
 
+![App Screenshot](https://github.com/trentonwahr/album-tracker/blob/main/public/images/war-screenshot3.png)
+
 Long Plays is an app to help you keep track of albums you've listened to and let the world know what you think about them!
 
 ## Technologies Used
