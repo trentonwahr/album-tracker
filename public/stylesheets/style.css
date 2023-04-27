@@ -98,7 +98,3 @@ button {
 button:hover {
   cursor: pointer;
 }
-
-#logout {
-  color: #f03a1c;
-}
