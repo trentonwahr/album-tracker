@@ -71,6 +71,8 @@ nav > a {
   border-radius: 5px;
   color: #f03a1c;
   font-size: 22px;
+  text-align: center;
+  justify-content: center;
 }
 
 nav > a:visited {
@@ -91,4 +93,8 @@ button {
   padding: 5px;
   border-radius: 5px;
   font-family: "helvetica neue";
+}
+
+#logout {
+  color: #f03a1c;
 }
