@@ -4,7 +4,7 @@
 
 Long Plays is an app that lets you keep track of albums you've listened to and let the world know what you think about them!
 
-## [Get started here!](album-tracker.fly.dev)
+## [Get started here!](https://album-tracker.fly.dev)
 
 ## Technologies Used
 
