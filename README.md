@@ -15,6 +15,8 @@ Long Plays is an app that lets you keep track of albums you've listened to and l
 - EJS
 - MongoDB
 - Mongoose
+- Node.js
+- Google OAuth
 - Fly.io
 
 ## Attributions
